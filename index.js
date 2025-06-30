@@ -18,7 +18,7 @@
   });
 
   const main = document.getElementById('main');
-    const maxOffset = 450; // максимальное смещение вверх
+    const maxOffset = 460; // максимальное смещение вверх
     const scrollDistance = 400; // за сколько пикселей прокрутки произойдет полное смещение
 
     window.addEventListener('scroll', () => {
