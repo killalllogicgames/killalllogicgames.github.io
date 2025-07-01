@@ -1,14 +1,12 @@
 
-  const textElement = document.getElementById("copy-text");
-  const notification = document.getElementById("notification");
+  const textElements = document.querySelectorAll(".copy-text");
+const notification = document.getElementById("notification");
 
-  textElement.addEventListener("click", function () {
+textElements.forEach((el) => {
+  el.addEventListener("click", function () {
     const text = this.textContent;
     navigator.clipboard.writeText(text).then(() => {
-      // Показать уведомление
       notification.classList.add("show");
-
-      // Скрыть через 3 секунды
       setTimeout(() => {
         notification.classList.remove("show");
       }, 1000);
@@ -16,6 +14,7 @@
       console.error("Ошибка при копировании:", err);
     });
   });
+});
 
   const main = document.getElementById('main');
     const maxOffset = 460; // максимальное смещение вверх
